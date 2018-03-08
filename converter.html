@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Converter</title>
+	<style type="text/css">
+		
+	</style>
+	<script type="text/javascript">
+	function convert(degree){
+		if (degree == 'C'){
+			F= Number(document.getElementById('c').value *9/5 +32) || 0;// use zero if NaN
+			document.getElementById('f').value= Math.round(F);
+		}else  {
+			C= Number((document.getElementById('f').value -32) *5/9) || 0;
+			document.getElementById('C').value = Math.round(C);
+		}
+
+		}
+		function conver(degree){
+			if (degree == 'F'){
+			C= Number(document.getElementById('c').value *9/5 +32) || 0;// use zero if NaN
+			document.getElementById('C').value= Math.round(F);
+		}else  {
+			F= Number((document.getElementById('f').value -32) *5/9) || 0;
+			document.getElementById('f').value = Math.round(C);
+		}
+		}
+
+	</script>
+</head>
+<body>
+	<p>
+		<input id="c" onkeyup="convert('C')"> Degree Celsius<br>
+		Equals<br>
+		<input id="f" onkeyup="convert('F')" name="" >degrees Fahrenheit
+	</p>
+	<p>Note that the <b> Math.round()</b> method is used, so that the result will be returned as an integer.</p>
+	<div>
+		<p>
+		<input id="f2" onkeyup="conver('F')"> degrees Fahrenheit<br>
+		Equals<br>
+		<input id="c2" onkeyup="conver('C')" name="" >Degree Celsius
+	</p>
+	</div>
+</body>
+</html>
