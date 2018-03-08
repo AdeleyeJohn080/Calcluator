@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<script type="text/javascript" src="calculator.js"></script>
+	</head>
+<body>
+<form>
+	<table  border="1" cellspacing="4" cellpadding="4" style="margin: auto;margin-top: 50px;background-color: gray;border-radius: 10px;">
+		<tr >
+			<td colspan="7" height="55px" id="screen" style="background-color: white;color:black;border-radius: 5px"></td>
+		</tr>
+		<tr bgcolor="gray">
+			<td><input type="button" name="" value="SHIFT" style="color: orange;width: 50px;border-radius: 5px"></td>
+			<td><input type="button" name="" value="Alpha" style=" color: pink;border-radius: 5px;width: 50px"></td>
+			<td colspan="2"><input type="button" name="" value="REPLAY" style=" color: yellow;border-radius: 10px;width:120px;height:40px;margin:3px "></td>
+			<td><input type="button" name="" value="MODE" style=" color: lightblue;border-radius: 5px"></td>
+			<td><input type="button" name="" value="ON" style=" color: lightblue;border-radius: 5px;width: 50px" id="on" onclick="power()"></td>	
+		</tr>
+		<tr >
+			<td>
+				<input type="button" name="" value="CALC" style="background-color: black;color:white;border-radius: 5px;width: 50px">
+			</td>
+			<td><input type="button" name="" value="dx" style="background-color: black;color:white;border-radius: 5px;width: 50px"></td>
+			<td colspan="2"></td>
+			<td><input type="button" name="" value="x-1" style="background-color: black;color:white;border-radius: 5px;width: 50px"></td>
+			<td><input type="button" name="" value="CONS" style="background-color: black;color:white;border-radius: 5px;width: 50px"></td>
+			
+		</tr>
+		<tr >
+			<td><input type="button" name="" value="" style="background-color: black;color:white;border-radius: 5px;width: 50px"></td>
+			<td><input type="button" name="" value="" style="background-color: black;color:white;border-radius: 5px;width: 50px"></td>
+			<td><input type="button" name="" value="x2" style="background-color: black;color:white;border-radius: 5px;width: 50px"></td>
+			<td><input type="button" name="" value="^" style="background-color: black;color:white;border-radius: 5px;width: 50px"></td>
+			<td><input type="button" name="" value="log" style="background-color: black;color:white;border-radius: 5px;width: 50px"></td>
+			<td><input type="button" name="" value="In" style="background-color: black;color:white;border-radius: 5px;width: 50px"></td>
+		</tr>
+		<tr bgcolor="gray">
+			<td><input type="button" name="" value="(-)" style="background-color: black;color:white;border-radius: 5px;width: 50px"></td>
+			<td><input type="button" name="" value=".,,," style="background-color: black;color:white;border-radius: 5px;width: 50px"></td>
+			<td><input type="button" name="" value="hyp" style="background-color: black;color:white;border-radius: 5px;width: 50px"></td>
+			<td><input type="button" name="" value="sin" style="background-color: black;color:white;border-radius: 5px;width: 50px"></td>
+			<td><input type="button" name="" value="cos" style="background-color: black;color:white;border-radius: 5px;width: 50px"></td>
+			<td><input type="button" name="" value="tan" style="background-color: black;color:white;border-radius: 5px;width: 50px"></td>
+		</tr>
+		<tr >
+			<td><input type="button" name="" value="RCL" style="background-color: black;color:white;border-radius: 5px;width: 50px"></td>
+			<td><input type="button" name="" value="ENG" style="background-color: black;color:white;border-radius: 5px;width: 50px"></td>
+			<td><input type="button" name="" onclick="bracket('(')" value="(" style="background-color: black;color:white;border-radius: 5px;width: 50px"></td>
+			<td><input type="button" name="" value=")" onclick="bracket(')')" style="background-color: black;color:white;border-radius: 5px;width: 50px"></td>
+			<td><input type="button" name="" value="," style="background-color: black;color:white;border-radius: 5px;width: 50px" onclick="press(',')"></td>
+			<td><input type="button" name="" value="M+" style="background-color: black;color:white;border-radius: 5px;width: 50px"></td>
+		</tr>
+		<tr >
+			<td><input type="button" name="" value="7" style="background-color: gray;color:white;border-radius: 5px;width: 50px;height: 30px" onclick="press('7')"></td>
+			<td><input type="button" name=""  value="8" style="background-color: gray;color:white;border-radius: 5px;width: 50px;height: 30px" onclick="press('8')"></td>
+			<td><input type="button" name="" value="9" style="background-color: gray;color:white;border-radius: 5px;width: 50px;height: 30px" onclick="press('9')"></td>
+			<td><input type="button" name="" value="" style="background-color: gray;color:white;border-radius: 5px;width: 50px;height: 30px"onclick="press('')"></td>
+			<td><input type="button" name="" value="DEL" style="background-color: red;color:white;border-radius: 5px;width: 50px;height: 30px" id="del" onclick="remov()"></td>
+			<td><input type="button" name="" value="AC" style="background-color: red;color:white;border-radius: 5px;width: 50px;height: 30px" onclick="cancel()"></td>
+		</tr>
+		<tr>
+			<td><input type="button" name="" value="4" style="background-color: gray;color:white;border-radius: 5px;width: 50px;height: 30px" onclick="press('4')"></td>
+			<td><input type="button" name="" value="5" style="background-color: gray;color:white;border-radius: 5px;width: 50px;height: 30px" onclick="press('5')"></td>
+			<td><input type="button" name="" value="6" style="background-color: gray;color:white;border-radius: 5px;width: 50px;height: 30px"onclick="press('6')"></td>
+			<td><input type="button" name="" value="" style="background-color: gray;color:white;border-radius: 5px;width: 50px;height: 30px"onclick="press('')"></td>
+			<td><input type="button" name="" value="*" style="background-color: gray;color:white;border-radius: 5px;width: 50px;height: 30px" onclick="oper('*')"></td>
+			<td><input type="button" name="" value="/" style="background-color: gray;color:white;border-radius: 5px;width: 50px;height: 30px" onclick="oper('/')"></td>
+		</tr>
+		<tr>
+			<td><input type="button" name="" value="1" style="background-color: gray;color:white;border-radius: 5px;width: 50px;height: 30px" onclick="press('1')"></td>
+			<td><input type="button" name="" value="2" style="background-color: gray;color:white;border-radius: 5px;width: 50px;height: 30px" onclick="press('2')"></td>
+			<td><input type="button" name="" value="3" style="background-color: gray;color:white;border-radius: 5px;width: 50px;height: 30px" onclick="press('3')"></td>
+			<td><input type="button" name="" value="" style="background-color: gray;color:white;border-radius: 5px;width: 50px;height: 30px"onclick="press('')"></td>
+			<td><input type="button" name="" value="+" style="background-color: gray;color:white;border-radius: 5px;width: 50px;height: 30px" onclick="oper('+')"></td>
+			<td><input type="button" name="" value="-" style="background-color: gray;color:white;border-radius: 5px;width: 50px;height: 30px" onclick="oper('-')"></td>
+		</tr>
+		<tr>
+			<td><input type="button"  name="" value="0" style="background-color: gray;color:white;border-radius: 5px;width: 50px;height: 30px" onclick="press('0')"></td>
+			<td><input type="button" name="" value="." style="background-color: gray;color:white;border-radius: 5px;width: 50px;height: 30px" onclick="float('.')"></td>
+			<td><input type="button" id="exp" name="" value="EXP" style="background-color: gray;color:white;border-radius: 5px;width: 50px;height: 30px"></td>
+			<td><input type="button" name="" value="" style="background-color: gray;color:white;border-radius: 5px;width: 50px;height: 30px"onclick="press('')"></td>
+			<td><input type="button" name="" value="Ans" style="background-color: gray;color:white;border-radius: 5px;width: 50px;height: 30px"></td>
+			<td><input type="button" name="" value="=" style="background-color: gray;color:white;border-radius: 5px;width: 50px;height: 30px" onclick="equals()"></td>
+		</tr>
+		</div>
+		<p id="date" style="color: blue;text-align: center;"></p>
+	</table>
+</form>
+</body>
+</html>
